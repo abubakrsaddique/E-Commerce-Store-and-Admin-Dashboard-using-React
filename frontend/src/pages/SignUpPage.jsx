@@ -29,7 +29,7 @@ const SignUpPage = () => {
         transition={{ duration: 0.8 }}
       >
         <h2 className="mt-6 text-center text-3xl font-extrabold text-emerald-400">
-          Create your account
+          Create Your Account
         </h2>
       </motion.div>
 
