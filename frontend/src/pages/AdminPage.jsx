@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 // import AnalyticsTab from "../components/AnalyticsTab";
 // import CreateProductForm from "../components/CreateProductForm";
-// import ProductsList from "../components/ProductsList";
+import ProductsList from "../components/ProductsList";
 // import { useProductStore } from "../stores/useProductStore";
 
 const tabs = [
@@ -55,9 +55,9 @@ const AdminPage = () => {
             </button>
           ))}
         </div>
-        {/* {activeTab === "create" && <CreateProductForm />}
+        {/* {activeTab === "create" && <CreateProductForm />} */}
         {activeTab === "products" && <ProductsList />}
-        {activeTab === "analytics" && <AnalyticsTab />} */}
+        {/* {activeTab === "analytics" && <AnalyticsTab />} */}
       </div>
     </div>
   );
