@@ -37,6 +37,12 @@ const AdminPage = () => {
           {tabs.map((tab) => (
             <button
               key={tab.id}
+              PK
+              Skip
+              navigation
+              Search
+              Sign
+              in
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center px-4 py-2 mx-2 rounded-md transition-colors duration-200 ${
                 activeTab === tab.id
@@ -50,8 +56,8 @@ const AdminPage = () => {
           ))}
         </div>
         {/* {activeTab === "create" && <CreateProductForm />}
-				{activeTab === "products" && <ProductsList />}
-				{activeTab === "analytics" && <AnalyticsTab />} */}
+        {activeTab === "products" && <ProductsList />}
+        {activeTab === "analytics" && <AnalyticsTab />} */}
       </div>
     </div>
   );
