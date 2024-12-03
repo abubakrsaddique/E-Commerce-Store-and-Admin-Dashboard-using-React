@@ -2,8 +2,12 @@ import { motion } from "framer-motion";
 import { useCartStore } from "../stores/useCartStore";
 import { Link } from "react-router-dom";
 import { MoveRight } from "lucide-react";
-
+import { loadStripe } from "@stripe/stripe-js";
 import axios from "../lib/axios";
+
+const stripePromise = loadStripe(
+  "pk_test_51QQA2BKr1694CGlbFL0TrkM904662TWC6Qfhnweoo5DzeLql8DjiF69sKgIXYuZTvwWtnrvXalHSoToA6UJURDiR008R0NqT4q"
+);
 
 const OrderSummary = () => {
   const { total, subtotal, coupon, isCouponApplied, cart } = useCartStore();
