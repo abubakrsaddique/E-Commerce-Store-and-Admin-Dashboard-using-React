@@ -44,7 +44,20 @@ function App() {
       <div className="relative z-50 pt-20">
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/"
+            element={
+              user ? (
+                user.role === "admin" ? (
+                  <AdminPage />
+                ) : (
+                  <HomePage />
+                )
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
           <Route
             path="/signup"
             element={!user ? <SignUpPage /> : <Navigate to="/" />}
