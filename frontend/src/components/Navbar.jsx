@@ -20,38 +20,34 @@ const Navbar = () => {
           </Link>
 
           <nav className="flex flex-wrap items-center gap-4">
-            <Link
-              to={"/"}
-              className="text-gray-300 hover:text-emerald-400 transition duration-300
-					 ease-in-out"
-            >
-              Home
-            </Link>
-            {user && (
-              <Link
-                to={"/cart"}
-                className="relative group text-gray-300 hover:text-emerald-400 transition duration-300 
-							ease-in-out"
-              >
-                <ShoppingCart
-                  className="inline-block mr-1 group-hover:text-emerald-400"
-                  size={20}
-                />
-                <span className="hidden sm:inline">Cart</span>
-                {cart.length > 0 && (
-                  <span
-                    className="absolute -top-2 -left-2 bg-emerald-500 text-white rounded-full px-2 py-0.5 
-									text-xs group-hover:bg-emerald-400 transition duration-300 ease-in-out"
-                  >
-                    {cart.length}
-                  </span>
-                )}
-              </Link>
+            {user && !isAdmin && (
+              <>
+                <Link
+                  to={"/"}
+                  className="text-gray-300 hover:text-emerald-400 transition duration-300 ease-in-out"
+                >
+                  Home
+                </Link>
+                <Link
+                  to={"/cart"}
+                  className="relative group text-gray-300 hover:text-emerald-400 transition duration-300 ease-in-out"
+                >
+                  <ShoppingCart
+                    className="inline-block mr-1 group-hover:text-emerald-400"
+                    size={20}
+                  />
+                  <span className="hidden sm:inline">Cart</span>
+                  {cart.length > 0 && (
+                    <span className="absolute -top-2 -left-2 bg-emerald-500 text-white rounded-full px-2 py-0.5 text-xs group-hover:bg-emerald-400 transition duration-300 ease-in-out">
+                      {cart.length}
+                    </span>
+                  )}
+                </Link>
+              </>
             )}
             {isAdmin && (
               <Link
-                className="bg-emerald-700 hover:bg-emerald-600 text-white px-3 py-1 rounded-md font-medium
-								 transition duration-300 ease-in-out flex items-center"
+                className="bg-emerald-700 hover:bg-emerald-600 text-white px-3 py-1 rounded-md font-medium transition duration-300 ease-in-out flex items-center"
                 to={"/secret-dashboard"}
               >
                 <Lock className="inline-block mr-1" size={18} />
@@ -61,8 +57,7 @@ const Navbar = () => {
 
             {user ? (
               <button
-                className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 
-						rounded-md flex items-center transition duration-300 ease-in-out"
+                className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-md flex items-center transition duration-300 ease-in-out"
                 onClick={logout}
               >
                 <LogOut size={18} />
@@ -72,16 +67,14 @@ const Navbar = () => {
               <>
                 <Link
                   to={"/signup"}
-                  className="bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-4 
-									rounded-md flex items-center transition duration-300 ease-in-out"
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-4 rounded-md flex items-center transition duration-300 ease-in-out"
                 >
                   <UserPlus className="mr-2" size={18} />
                   Sign Up
                 </Link>
                 <Link
                   to={"/login"}
-                  className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 
-									rounded-md flex items-center transition duration-300 ease-in-out"
+                  className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-md flex items-center transition duration-300 ease-in-out"
                 >
                   <LogIn className="mr-2" size={18} />
                   Login
